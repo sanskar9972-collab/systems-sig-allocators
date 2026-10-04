@@ -1,0 +1,12 @@
+==================
+WARNING: ThreadSanitizer: data race (pid=287)
+  Read of size 8 at 0x729000000000 by main thread:
+    #0 SpscQueue<unsigned long>::try_pop(unsigned long&) include/spsc_queue.hpp:55 (neg+0x34c7) (BuildId: 311033db11e27fc24056ebd540ab52a3b2b419f8)
+    #1 main tests/test_spsc.cpp:61 (neg+0x34c7)
+
+  Previous write of size 8 at 0x729000000000 by thread T1:
+    #0 SpscQueue<unsigned long>::try_push(unsigned long const&) include/spsc_queue.hpp:43 (neg+0x2665) (BuildId: 311033db11e27fc24056ebd540ab52a3b2b419f8)
+    #1 operator() tests/test_spsc.cpp:54 (neg+0x2665)
+    #2 __invoke_impl<void, main()::<lambda()> > /usr/include/c++/13/bits/invoke.h:61 (neg+0x2665)
+    #3 __invoke<main()::<lambda()> > /usr/include/c++/13/bits/invoke.h:96 (neg+0x2665)
+    #4 _M_invoke<0> /usr/include/c++/13/bits/std_thread.h:292 (neg+0x2665)
