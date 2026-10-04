@@ -1,0 +1,10 @@
+### build/pipeline_bench --huge-pages
+arena: 4194304 bytes, transparent huge pages (madvise)
+messages/run=4000000 burst=65536 queue=65536 batch=64 runs=3 pin=0
+
+configuration                                  median msg/s     best msg/s   speedup  checksum
+baseline: malloc/free + mutex std::queue            8717226        8958923     1.00x  OK
+malloc/free + SPSC ring (ablation)                 10298304       10556865     1.18x  OK
+arena + mutex std::queue (ablation)                33676761       34606289     3.86x  OK
+arena + SPSC ring   <-- Phase 3 pipeline           88603322       88895226    10.16x  OK
+arena + MPMC queue (bonus, 1P/1C)                  29101233       29233064     3.34x  OK
