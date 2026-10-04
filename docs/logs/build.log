@@ -1,5 +1,0 @@
-mkdir -p build
-g++ -std=c++17 -Wall -Wextra -Wpedantic -O3 -Iinclude -Itests src/pipeline_bench.cpp -o build/pipeline_bench -pthread
-g++ -std=c++17 -Wall -Wextra -Wpedantic -O2 -g -Iinclude -Itests tests/test_arena.cpp -o build/test_arena -pthread
-g++ -std=c++17 -Wall -Wextra -Wpedantic -O2 -g -Iinclude -Itests tests/test_spsc.cpp -o build/test_spsc -pthread
-g++ -std=c++17 -Wall -Wextra -Wpedantic -O2 -g -Iinclude -Itests tests/test_mpmc.cpp -o build/test_mpmc -pthread

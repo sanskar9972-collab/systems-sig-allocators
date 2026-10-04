@@ -1,5 +1,0 @@
-### make test
-  huge-page request granted as: transparent huge pages (madvise)
-test_arena: all checks passed
-test_spsc: all checks passed
-test_mpmc: all checks passed
